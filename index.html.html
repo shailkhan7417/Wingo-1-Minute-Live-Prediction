@@ -1,0 +1,314 @@
+<html lang="en"><head>
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WINGO v6 PREDICTION TOOL</title>
+	<link rel="icon" type="image/png" href="dmwin.png">
+
+    
+  
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="https://www.dmwinapp.in/prediction-tool/dmwin/v4/style.css">
+  <script>
+    function togglePhoneView() {
+            const phoneContainer = document.getElementById('phone-container');
+            if (phoneContainer.style.display === 'none' || phoneContainer.style.display === '') {
+                phoneContainer.style.display = 'block'; // Show the container
+            } else {
+                phoneContainer.style.display = 'none'; // Hide the container
+            }
+        }
+  </script>
+<style>
+        @font-face {
+            font-family: 'NotoSans_online_security'; 
+            src: url(chrome-extension://jcpgbnbdnakoblgfkbgggankeidkfcdl/assets/fonts/noto-sans-regular.woff);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_medium_online_security'; 
+            src: url(chrome-extension://jcpgbnbdnakoblgfkbgggankeidkfcdl/assets/fonts/noto-sans-medium.ttf);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_bold_online_security'; 
+            src: url(chrome-extension://jcpgbnbdnakoblgfkbgggankeidkfcdl/assets/fonts/noto-sans-bold.woff);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_semibold_online_security'; 
+            src: url(chrome-extension://jcpgbnbdnakoblgfkbgggankeidkfcdl/assets/fonts/noto-sans-semibold.ttf);
+        }
+
+
+</style></head>
+
+<body alink="yellow" vlink="green" link="White">
+    <!-- Matrix background -->
+    <div class="matrix-background" id="matrix"><div class="matrix-column" style="left: 0px; animation-duration: 9.1872s;">2</div><div class="matrix-column" style="left: 16px; animation-duration: 7.99258s;">l</div><div class="matrix-column" style="left: 32px; animation-duration: 6.65805s;">"</div><div class="matrix-column" style="left: 48px; animation-duration: 9.20612s;">"</div><div class="matrix-column" style="left: 64px; animation-duration: 5.5365s;">-</div><div class="matrix-column" style="left: 80px; animation-duration: 8.37073s;">1</div><div class="matrix-column" style="left: 96px; animation-duration: 6.40432s;">u</div><div class="matrix-column" style="left: 112px; animation-duration: 8.42143s;"></div><div class="matrix-column" style="left: 128px; animation-duration: 8.20093s;">Q</div><div class="matrix-column" style="left: 144px; animation-duration: 6.60565s;">"</div><div class="matrix-column" style="left: 160px; animation-duration: 6.08921s;">F</div><div class="matrix-column" style="left: 176px; animation-duration: 7.86143s;">(</div><div class="matrix-column" style="left: 192px; animation-duration: 6.36108s;">\</div><div class="matrix-column" style="left: 208px; animation-duration: 9.97273s;"></div><div class="matrix-column" style="left: 224px; animation-duration: 9.88875s;">N</div><div class="matrix-column" style="left: 240px; animation-duration: 9.32052s;">q</div><div class="matrix-column" style="left: 256px; animation-duration: 6.512s;">I</div><div class="matrix-column" style="left: 272px; animation-duration: 9.10888s;">j</div><div class="matrix-column" style="left: 288px; animation-duration: 8.72408s;">M</div><div class="matrix-column" style="left: 304px; animation-duration: 9.30086s;">:</div><div class="matrix-column" style="left: 320px; animation-duration: 5.23621s;">\</div><div class="matrix-column" style="left: 336px; animation-duration: 5.63074s;"> </div><div class="matrix-column" style="left: 352px; animation-duration: 7.85216s;">J</div><div class="matrix-column" style="left: 368px; animation-duration: 5.78349s;">$</div><div class="matrix-column" style="left: 384px; animation-duration: 8.26717s;">`</div><div class="matrix-column" style="left: 400px; animation-duration: 9.87413s;">C</div><div class="matrix-column" style="left: 416px; animation-duration: 8.27657s;"></div><div class="matrix-column" style="left: 432px; animation-duration: 6.37134s;">a</div><div class="matrix-column" style="left: 448px; animation-duration: 5.61523s;"></div><div class="matrix-column" style="left: 464px; animation-duration: 7.9374s;">"</div><div class="matrix-column" style="left: 480px; animation-duration: 7.95281s;"></div><div class="matrix-column" style="left: 496px; animation-duration: 7.77759s;">"</div><div class="matrix-column" style="left: 512px; animation-duration: 7.4792s;">+</div><div class="matrix-column" style="left: 528px; animation-duration: 6.01496s;"></div><div class="matrix-column" style="left: 544px; animation-duration: 5.79991s;">z</div><div class="matrix-column" style="left: 560px; animation-duration: 5.2559s;">J</div><div class="matrix-column" style="left: 576px; animation-duration: 8.87216s;">4</div><div class="matrix-column" style="left: 592px; animation-duration: 8.60314s;">Z</div><div class="matrix-column" style="left: 608px; animation-duration: 9.88398s;"></div><div class="matrix-column" style="left: 624px; animation-duration: 6.57604s;">.</div><div class="matrix-column" style="left: 640px; animation-duration: 5.92993s;"></div><div class="matrix-column" style="left: 656px; animation-duration: 8.03543s;">c</div><div class="matrix-column" style="left: 672px; animation-duration: 5.14024s;">N</div><div class="matrix-column" style="left: 688px; animation-duration: 8.5728s;">B</div><div class="matrix-column" style="left: 704px; animation-duration: 5.67106s;"></div><div class="matrix-column" style="left: 720px; animation-duration: 6.37503s;">'</div><div class="matrix-column" style="left: 736px; animation-duration: 6.34638s;">O</div><div class="matrix-column" style="left: 752px; animation-duration: 5.72279s;"></div><div class="matrix-column" style="left: 768px; animation-duration: 5.32787s;"></div><div class="matrix-column" style="left: 784px; animation-duration: 7.54382s;">B</div><div class="matrix-column" style="left: 800px; animation-duration: 8.9709s;"></div><div class="matrix-column" style="left: 816px; animation-duration: 7.21999s;">0</div><div class="matrix-column" style="left: 832px; animation-duration: 7.89024s;">P</div><div class="matrix-column" style="left: 848px; animation-duration: 6.3822s;">Z</div><div class="matrix-column" style="left: 864px; animation-duration: 6.07173s;">g</div><div class="matrix-column" style="left: 880px; animation-duration: 5.63788s;">j</div><div class="matrix-column" style="left: 896px; animation-duration: 8.17705s;">R</div><div class="matrix-column" style="left: 912px; animation-duration: 5.19849s;">Y</div><div class="matrix-column" style="left: 928px; animation-duration: 5.35923s;">#</div><div class="matrix-column" style="left: 944px; animation-duration: 6.27856s;">z</div><div class="matrix-column" style="left: 960px; animation-duration: 7.37954s;">V</div><div class="matrix-column" style="left: 976px; animation-duration: 6.61301s;">J</div><div class="matrix-column" style="left: 992px; animation-duration: 8.11081s;"></div><div class="matrix-column" style="left: 1008px; animation-duration: 7.44847s;">\</div><div class="matrix-column" style="left: 1024px; animation-duration: 9.63903s;">2</div><div class="matrix-column" style="left: 1040px; animation-duration: 8.42544s;">!</div><div class="matrix-column" style="left: 1056px; animation-duration: 9.41028s;">5</div><div class="matrix-column" style="left: 1072px; animation-duration: 7.05799s;"></div><div class="matrix-column" style="left: 1088px; animation-duration: 7.87433s;"></div><div class="matrix-column" style="left: 1104px; animation-duration: 6.97177s;">o</div><div class="matrix-column" style="left: 1120px; animation-duration: 5.25367s;">"</div><div class="matrix-column" style="left: 1136px; animation-duration: 9.97314s;">y</div><div class="matrix-column" style="left: 1152px; animation-duration: 5.95026s;">V</div><div class="matrix-column" style="left: 1168px; animation-duration: 9.56452s;">8</div><div class="matrix-column" style="left: 1184px; animation-duration: 9.23776s;">0</div><div class="matrix-column" style="left: 1200px; animation-duration: 8.54406s;">Y</div><div class="matrix-column" style="left: 1216px; animation-duration: 6.85226s;">R</div><div class="matrix-column" style="left: 1232px; animation-duration: 7.12255s;">:</div><div class="matrix-column" style="left: 1248px; animation-duration: 9.72506s;">$</div><div class="matrix-column" style="left: 1264px; animation-duration: 5.52524s;">b</div><div class="matrix-column" style="left: 1280px; animation-duration: 5.81633s;">i</div><div class="matrix-column" style="left: 1296px; animation-duration: 7.62083s;">&amp;</div><div class="matrix-column" style="left: 1312px; animation-duration: 6.76106s;">-</div><div class="matrix-column" style="left: 1328px; animation-duration: 8.38434s;">:</div></div>
+
+    <!-- Page Content -->
+    <div class="container">
+        <header>
+            <h1>WINGO v4 PREDICTION TOOL</h1>
+            <marquee behavior="" direction="">"रजिस्टर पर क्लिक करें और नया अकाउंट बनाएं अन्यथा हैक काम नहीं करेगा Register Now "</marquee>
+
+        </div>
+          <a href="https://www.diuwin9.com/#/register?invitationCode=511173875275" title="Link to REGISTER" target="_blank"><p>EXCLUSIVE PREDICTION TOOL FOR 511173875275</p></a>
+        </header>
+        <main>
+            <center><br><br><br>
+        <div class="slot-machine">
+    <div class="slot">
+      <div class="symbol" id="symbol1"></div>
+    </div>
+    <div class="slot">
+      <div class="symbol" id="symbol2"></div>
+    </div>
+    <div class="slot">
+      <div class="symbol" id="symbol3"></div>
+    </div>
+    <button class="circle-button" onclick="spin()">SPIN</button><br>Last 4 digit Num<br>
+    <label id="spinDuration" for="spinDuration"></label>
+  <br>
+    <div class="result-buttons"><!--<b><i>Please Select your Prediction result</i></b><br/>
+      <button onclick="recordResult(true)">WIN</button>
+      <button onclick="recordResult(false)">LOSE</button><br><br>-->
+      <button onclick="clearHistory()">RESET PREDICTION</button>
+    </div>
+     <div class="history">
+      <h3>History</h3>
+      <ul id="historyList"></ul>
+     
+          <ul id="historytable"></ul> </div>  </div>
+          </center>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+         <a href="https://www.diuwin9.com/#/register?invitationCode=511173875275" title="Link to REGISTER" target="_blank"><p>REGISTER Now</p></a>
+         <a href="https://t.me/reaxlprediction" title="Link to TELEGRAM" target="_blank"><p>TELEGRAM</p></a>
+
+            </div>
+<h5>This Hack Will Only Work In This App So Click On "REGISTER" And Make Your Account </h5>
+        <p>© 2025 All rights reserved | <a href="https://www.dmwinapp.in/" title="Visit our website" target="_blank">DIUWIN</a>™.</p>
+    </footer>
+   <!-- Floating icon with the new image -->
+    <div id="phone-icon" class="floating-icon" onclick="togglePhoneView()"></div>
+
+    <!-- Mobile phone-like container -->
+    <div id="phone-container" class="phone-container">
+        <div class="phone-header">Embedded Website</div>
+        <!-- Embed the desired mobile website -->
+
+
+  <iframe src="https://dmwin0.com/#/register?invitationCode=77682100479" style="border:0; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999;" scrolling="yes" frameborder="0" allowfullscreen="">
+    
+  </iframe>
+
+
+    </div>
+
+            
+
+    <!-- Link to External JavaScript -->
+    <script src="script.js">
+  </script>
+  <script>
+  
+function refreshPage() {
+            location.reload(); // Reloads the page
+        }
+
+// JavaScript to create Matrix effect
+const matrixBackground = document.getElementById('matrix');
+const columns = Math.floor(window.innerWidth / 16); // 16px width for each column
+
+for (let i = 0; i < columns; i++) {
+    const column = document.createElement('div');
+    column.className = 'matrix-column';
+    column.style.left = `${i * 16}px`; // Position each column
+    column.style.animationDuration = `${Math.random() * 5 + 5}s`; // Random speed for falling effect
+
+    // Add random Matrix-like characters
+    setInterval(() => {
+        column.textContent = String.fromCharCode(Math.floor(Math.random() * 128));
+    }, 300);
+
+    matrixBackground.appendChild(column);
+}
+
+
+
+ function togglePhoneView() {
+            const phoneContainer = document.getElementById('phone-container');
+            if (phoneContainer.style.display === 'none' || phoneContainer.style.display === '') {
+                phoneContainer.style.display = 'block'; // Show the container
+            } else {
+                phoneContainer.style.display = 'none'; // Hide the container
+            }
+        }
+
+
+
+
+const symbols = ['SMALL','BIG','SMALL','BIG','SMALL','BIG','RED','GREEN','RED','GREEN' ];
+let spinning = false;
+let history = [];
+let tble = [];
+/*function spin() {
+  if (spinning) return;
+
+  spinning = true;
+  const slots = document.querySelectorAll('.symbol');
+  let counter = 0;
+  
+
+
+  const spinInterval = setInterval(() => {
+    slots.forEach(slot => {
+      const randomIndex = Math.floor(Math.random() * symbols.length);
+      slot.innerText = symbols[randomIndex];
+    });
+    counter++;
+    if (counter === 10) {
+        const periodInput = document.getElementById('spinDuration');
+  		const currentPeriod = parseInt(periodInput.value);
+ 		 const incrementedPeriod = currentPeriod + 1 <= 9999 ? currentPeriod + 1 : 9999; // Increment period by one, limit to max 9999
+  
+ 		 periodInput.value = incrementedPeriod; // Update the input field with the incremented value
+      clearInterval(spinInterval);
+      spinning = false;
+      document.getElementById('symbol1').innerText='';
+      document.getElementById('symbol3').innerText='';
+      checkResults(incrementedPeriod);
+    }
+  }, 200);
+}*/
+
+function spin() {
+  if (spinning) return;
+
+  const periodInput = document.getElementById('spinDuration');
+  let userInput = prompt('Enter a 4-digit or less number as the interval for the slot:');
+  userInput = parseInt(userInput);
+
+  if (isNaN(userInput) || userInput > 9999 || userInput <= 0) {
+    alert('Please enter a valid number between 1 and 9999.');
+    return;
+  }
+
+  periodInput.value = userInput;
+
+  spinning = true;
+  const slots = document.querySelectorAll('.symbol');
+  let counter = 0;
+
+  const spinInterval = setInterval(() => {
+    slots.forEach(slot => {
+      const randomIndex = Math.floor(Math.random() * symbols.length);
+      slot.innerText = symbols[randomIndex];
+    });
+    counter++;
+    if (counter === 10) {
+      const currentPeriod = parseInt(periodInput.value);
+      const incrementedPeriod = currentPeriod + 1 <= 9999 ? currentPeriod + 1 : 9999; // Increment period by one, limit to max 9999
+
+      periodInput.value = incrementedPeriod; // Update the input field with the incremented value
+      clearInterval(spinInterval);
+      spinning = false;
+      document.getElementById('symbol1').innerText = '';
+      document.getElementById('symbol3').innerText = '';
+      checkResults(incrementedPeriod);
+    }
+  },400);
+}
+
+function checkResults(incrementedPeriod) {
+  const symbols = Array.from(document.querySelectorAll('.symbol')).map(slot => slot.innerText);
+  const uniqueSymbols = new Set(symbols);
+  const result = "Period: " + incrementedPeriod + "\nPlace your Bet to: " + document.getElementById('symbol2').innerText;
+  history.push(result);
+  updateHistory();
+  alert(result);
+}
+
+function recordResult(win) {
+  const period = document.getElementById('spinDuration').value;
+  const result = win ? 'Win' : 'Lose';
+  const predres = document.getElementById('symbol2').innerText;
+
+  tble.push({period, predres, result});
+  updateHistoryTable();
+  
+}
+
+function updateHistoryTable() {
+  const tableDiv = document.getElementById('historyTable');
+  tableDiv.innerHTML = ''; // Clear previous content
+
+  const table = document.createElement('table');
+  const headers = ['Period','PredictionResult','Result'];
+
+  // Create table headers
+  const headerRow = document.createElement('tr');
+  headers.forEach(headerText => {
+    const th = document.createElement('th');
+    th.textContent = headerText;
+    headerRow.appendChild(th);
+  });
+  
+  table.appendChild(headerRow);
+
+  // Create table rows with history data
+  tble.forEach(entry => {
+    const row = document.createElement('tr');
+    for (const key in entry) {
+      const cell = document.createElement('td');
+      cell.textContent = entry[key];
+      row.appendChild(cell);
+    }
+    table.appendChild(row);
+  });
+
+  tableDiv.appendChild(table);
+}
+
+function updateHistory() {
+  const historyList = document.getElementById('historyList');
+  historyList.innerHTML = '';
+  history.forEach(result => {
+    const listItem = document.createElement('li');
+    listItem.textContent = result;
+    historyList.appendChild(listItem);
+  });
+}
+  
+  function clearHistory() {
+  history = [];
+  updateHistory1();
+     
+            const table = document.getElementById('historyTable');
+            if (table) {
+                // Remove all rows except the header
+                while (table.rows.length > 1) {
+                    table.deleteRow(1);
+                }
+            }
+        }
+
+
+function updateHistory1() {
+  const historyList = document.getElementById('historyList');
+  historyList.innerHTML = '';
+  history.forEach(result => {
+    const listItem = document.createElement('li');
+    listItem.textContent = result;
+    historyList.appendChild(listItem);
+  });
+}
+  </script>
+
+
+</body></html>
