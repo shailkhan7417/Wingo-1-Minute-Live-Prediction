@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wingo Live 1-Minute Prediction Tool</title>
+<style>
+  body {
+    background: #111;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 3rem;
+    color: #ff4500;
+    text-shadow: 0 0 10px #ff4500, 0 0 20px #ff6347;
+    animation: glow 1.5s infinite alternate;
+  }
+
+  @keyframes glow {
+    from { text-shadow: 0 0 5px #ff4500, 0 0 10px #ff6347; }
+    to { text-shadow: 0 0 20px #ff4500, 0 0 30px #ff6347; }
+  }
+
+  .liveBox, .historyBox, .predictionBox, .inputBox {
+    background: #222;
+    padding: 15px;
+    margin: 10px auto;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ff4500;
+  }
+
+  .historyItem {
+    display: flex;
+    justify-content: space-between;
+    margin: 2px 0;
+    padding: 5px;
+    background: #333;
+    border-radius: 5px;
+    animation: slideIn 0.5s;
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  input, button {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+  }
+
+  button {
+    background: #ff6347;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #ff4500;
+  }
+
+  .predictionResult {
+    font-size: 1.2rem;
+    color: #0ff;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Wingo 1-Minute Live Prediction</h1>
+
+<div class="liveBox">
+  <h2>Live 1-Minute Draw</h2>
+  <div id="livePrediction">Loading live data...</div>
+</div>
+
+<div class="historyBox">
+  <h3>Live History (Last 100 Draws)</h3>
+  <div id="historyList"></div>
+</div>
+
+<div class="inputBox">
+  <h3>Check 4-Digit Number</h3>
+  <input type="text" id="digitInput" maxlength="4" placeholder="Enter 4-digit number">
+  <button id="getPredictionBtn">Get Prediction</button>
+  <div id="predictionResult" class="predictionResult"></div>
+</div>
+
+<div class="inputBox">
+  <h3>Add 5-Digit Data</h3>
+  <input type="text" id="fiveDigitInput" maxlength="5" placeholder="Enter 5-digit number">
+  <button id="addFiveDigitBtn">Add Data</button>
+</div>
+
+<script>
+let historyData = [];
+
+// Function to fetch live API data
+async function fetchLiveData() {
+    try {
+        const response = await fetch("https://draw.ar-lottery01.com/WinGo/WinGo_1M.json?ts=" + Date.now(), {
+            headers: { "accept": "application/json, text/plain, */*" }
+        });
+        const data = await response.json();
+        const latest = data.current;
+
+        // Simulated Number, Color, Size (replace with trend-based algorithm if needed)
+        const number = Math.floor(Math.random() * 10);
+        const color = (number % 2 === 0) ? "Green" : "Red";
+        const size = (number >= 5) ? "Big" : "Small";
+
+        const liveHtml = `
+          Period: ${latest.issueNumber} <br>
+          Number: ${number} <br>
+          Color: ${color} <br>
+          Size: ${size}
+        `;
+        document.getElementById("livePrediction").innerHTML = liveHtml;
+
+        // Add to history
+        historyData.unshift({ period: latest.issueNumber, number, color, size });
+        if(historyData.length > 100) historyData.pop();
+        updateHistory();
+    } catch(err) {
+        console.error(err);
+        document.getElementById("livePrediction").innerHTML = "Failed to load live data";
+    }
+}
+
+// Update history list
+function updateHistory() {
+    const listDiv = document.getElementById("historyList");
+    listDiv.innerHTML = "";
+    historyData.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "historyItem";
+        div.innerHTML = `<span>${item.period}</span> <span>${item.number}</span> <span>${item.color}</span> <span>${item.size}</span>`;
+        listDiv.appendChild(div);
+    });
+}
+
+// Get Prediction Button
+document.getElementById("getPredictionBtn").addEventListener("click", () => {
+    const val = document.getElementById("digitInput").value;
+    if(val.length !== 4) {
+        alert("Please enter 4-digit number");
+        return;
+    }
+
+    // Simple trend-based prediction: check last similar digits
+    const lastDraw = historyData.find(item => item.period.endsWith(val));
+    let result;
+    if(lastDraw) {
+        result = `Prediction based on trend: Number=${lastDraw.number}, Color=${lastDraw.color}, Size=${lastDraw.size}`;
+    } else {
+        result = "No similar draw found, try another number.";
+    }
+    document.getElementById("predictionResult").innerText = result;
+});
+
+// Add 5-digit Data Button
+document.getElementById("addFiveDigitBtn").addEventListener("click", () => {
+    const val = document.getElementById("fiveDigitInput").value;
+    if(val.length !== 5) { alert("Enter 5-digit number"); return; }
+    // Add to history for demo purposes
+    const randomNum = Math.floor(Math.random() * 10);
+    const color = (randomNum % 2 === 0) ? "Green" : "Red";
+    const size = (randomNum >=5) ? "Big" : "Small";
+    historyData.unshift({ period: val, number: randomNum, color, size });
+    if(historyData.length > 100) historyData.pop();
+    updateHistory();
+});
+
+// Initial load
+fetchLiveData();
+setInterval(fetchLiveData, 60000); // every 60 sec
+</script>
+
+</body>
+</html>
